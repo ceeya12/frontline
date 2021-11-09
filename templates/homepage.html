@@ -29,16 +29,34 @@
           position: fixed;
 
       }
+
+
+       .frontlinedogtag
+      {
+        animation: rotation 5s linear;
+
+      }
+@keyframes rotation
+{
+  from
+  {
+    transform: rotate(0deg);
+  }
+  to
+  {
+    transform: rotate(359deg);
+  }
+}
     </style>
 
   </head>
   <div class="header">
-      <h1 class="text-center text-white" > Call Today For Your Free Estimate </h1>
+      <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
   </div>
 
   <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 75px">
      <div>
-          <img src="/static/frontlinedogtag.png" width="200" height="100">
+          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
       <a style="padding-left: 300px" class="navbar-brand" href="#">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
