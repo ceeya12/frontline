@@ -58,32 +58,32 @@
      <div>
           <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
-      <a style="padding-left: 300px" class="navbar-brand" href="#">HOME </a>
+      <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">ABOUT <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">SERVICES</a>
+            <a class="nav-link" href="{{ url_for('ServicesPage')}}">SERVICES</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">INQUIRY</a>
+            <a class="nav-link" href="{{ url_for('InquiryPage')}}">INQUIRY</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">GALLERY</a>
+            <a class="nav-link" href="{{ url_for('Gallery')}}">GALLERY</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">CONTACT</a>
+            <a class="nav-link" href="{{ url_for('ContactPage')}}">CONTACT</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">REVIEWS</a>
+            <a class="nav-link" href="{{ url_for('ReviewPage')}}">REVIEWS</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">FINANCE</a>
+            <a class="nav-link" href="{{ url_for('FinancingPage')}}">FINANCE</a>
           </li>
         </ul>
           <div style="padding-right: 50px">
@@ -152,7 +152,7 @@
     <!-- /.carousel -->
 
 <h1>Test Text </h1>
-  
+
 <h1>Test Text </h1>
   <h1>Test Text </h1>
   <h1>Test Text </h1>
