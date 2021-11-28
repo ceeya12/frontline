@@ -15,9 +15,6 @@
 
       <title>FrontLine Pool</title>
     <style>
-      body {
-  background-color: lightslategray;
-    }
 
       /********** Color strip at the top of the screen*********/
 
@@ -26,8 +23,11 @@
           width: 100%;
           height: 100px;
           background-color: red;
-          position: fixed;
-
+          position: absolute;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-size: 18px;
+          font-style: italic;
+          padding-top: 20px;
       }
 
 
@@ -47,43 +47,56 @@
     transform: rotate(359deg);
   }
 }
+/* transperent bar behind navigation links in nav bar*/
+
+        .graytransperent{
+            width: auto;
+            height: 100px;
+            background-color: gray;
+        }
+
     </style>
 
   </head>
   <div class="header">
-      <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
+      <h1 class="text-center text-white" style="font-size: 25px"> Schedule Your No Obligation Home Estimate, Call 830-355-5555 </h1>
   </div>
 
   <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 75px">
-     <div>
-          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
+
+      <div>
+         <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
-      <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
+
+      <a style="padding-left: 300px" class="navbar-brand" href="#">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">ABOUT <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('ServicesPage')}}">SERVICES</a>
+            <a class="nav-link" href="#">SERVICES</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('InquiryPage')}}">INQUIRY</a>
+            <a class="nav-link" href="#">INQUIRY</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('Gallery')}}">GALLERY</a>
+            <a class="nav-link" href="#">GALLERY</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('ContactPage')}}">CONTACT</a>
+            <a class="nav-link" href="#">CONTACT</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('ReviewPage')}}">REVIEWS</a>
+            <a class="nav-link" href="#">REVIEWS</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('FinancingPage')}}">FINANCE</a>
+            <a class="nav-link" href="#">FINANCE</a>
           </li>
         </ul>
           <div style="padding-right: 50px">
@@ -92,9 +105,9 @@
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
           </div>
-      </div>
+          </div>
     </nav>
-
+      </div>
   <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -118,6 +131,7 @@
     C A R O U S E L
     ####################################################
     -->
+
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding-top: 100px">
   <ol class="carousel-indicators">
@@ -151,17 +165,281 @@
 
     <!-- /.carousel -->
 
-<h1>Home Text </h1>
+  <style>
+      .awardwinning{
+          text-align: center;
+          padding-top: 100px;
+          font-weight: bold;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-style: oblique;
+      }
 
-<h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
+      .sanew{
+          text-align: center;
 
+
+      }
+      .number1{
+          text-align: center;
+      }
+  </style>
+
+  <div>
+      <h1 class="awardwinning">Awarding Winning</h1>
+      <h1 class="sanew"> San Antonio/New Braunfels  </h1>
+      <h1 class="number1"> Number One Pool Servicing Company</h1>
+  </div>
+
+  <style>
+      .paragraphpicture{
+          float: left;
+          height: 200px;
+          width: 250px;
+      }
+      .paragraphfont{
+          padding-top: 60px;
+          display: block;
+          text-align: center;
+      }
+  </style>
+  <div id="container">
+      <img class="paragraphpicture" src="/static/2019-top-50-service-logo-hero.png">
+      <p class="paragraphfont">
+          We go above and beyond in order to show our clients why we’re the best option for their needs. Some of
+          which include using the best chemical products on the market, insurance, current state licensing and
+          regulations, ensuring all our Service Technicians have been background checked, are highly trained and (CPO)
+          Certified Pool and Spa Operators. We are also partnered with leading industry equipment manufacturers to
+          receive constant updates on new and improved methods and state of the art energy efficient equipment. Read
+          below to learn more, and contact us with questions.
+
+      </p>
+  </div>
+  
+  <style>
+      
+    .column {
+
+        width: 25%;
+        padding: 75px;
+        float: left;
+
+
+    }
+    .row{
+        display: table;
+        clear: both;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+  </style>
+
+  <!--Column gallery for badges under text in the middle-->
+  
+  <div class="row">
+      <div class="column">
+          <img src="/static/2018_houzz_service.png" height="150px" width="150px">
+      </div>
+      <div class="column">
+          <img src="/static/2018_pulse_city_customer_satisfaction.png" height="150px" width="150px">
+
+      </div>
+      <div class="column">
+           <img src="/static/2020_houzz_design.png" height="150px" width=150px">
+      </div>
+      <div class="column">
+           <img src="/static/award3.jpeg" height="150px" width=150px">
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="column">
+          <img src="/static/award4.jpeg" height="150px" width="150px">
+      </div>
+      <div class="column">
+          <img src="/static/award6.jpeg" height="150px" width="150px">
+      </div>
+      <div class="column">
+          <img src="/static/award7.jpeg" height="150px" width="150px">
+      </div>
+      <div class="column">
+          <img src="/static/WGP_2021.png" height="150px" width="150px">
+      </div>
+  </div>
+
+  <!-- Southwest pool & spa show award image  -->
+  <style>
+      .center {
+
+          height: 100px;
+          width: 100px;
+          padding-left: 500px;
+
+}
+  </style>
+
+  <!-- Southwest pool & spa show award image
   <div class="container">
-      <img src="/static/pool.jpeg">
+  <div class="center">
+      <img src="/static/SWPSS-AoE-2020-Plain.jpeg" >
+  </div>
+  </div>-->
+
+
+  <!-- solid color bar in center -->
+  <style>
+  .colorbar{
+
+          padding-top: 20px;
+          padding-bottom: 20px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          height: 125px;
+          background-color: lightslategray;
+          transition: 0.3s
+  }
+
+  .colorbar:hover {
+      background-color: cornflowerblue;
+
+  }
+
+  .innertext{
+      text-align: center;
+      font-family: "Lucida Console",monospace;
+      font-size: 18px;
+
+  }
+  </style>
+
+  <div class="colorbar">
+      <div class="innertext">
+      <H1>Are you ready to receive quality service?
+          <span style="text-decoration: underline;"> Let's talk now! </span>
+      </H1>
+      </div>
+  </div>
+
+  <style>
+
+/* table for 4 images with 2 pools and 2 spas */
+.col {
+  float: left;
+  width: 25%;
+  padding: 10px;
+    z-index: -1;
+}
+
+.ro:after {
+  content: "";
+  display: table;
+  clear: both;
+    z-index: -1;
+}
+
+
+
+  </style>
+
+  <!-- 4 images with 2 pools and 2 spas -->
+  <div class="ro">
+      <div class="col">
+      <img src="/static/picture1.jpg" height="300px" width="375px">
+      </div>
+      <div class="col">
+      <img src="/static/picture4.jpg" height="300px" width="375px">
+      </div>
+      <div class="col">
+      <img src="/static/HT V.jpg" height="300px" width="375px">
+      </div>
+      <div class="col">
+      <img src="/static/Hot Tub F V.jpg" height="300px" width="375px">
+      </div>
+
+  </div>
+
+  <!-- Gradient color strip below 4 images -->
+  <style>
+
+       .gradientbar{
+
+          padding-top: 20px;
+          padding-bottom: 20px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          height: 125px;
+           background-color: lightslategray;
+  }
+
+  </style>
+
+  <div class="gradientbar">
+      <span><button> Gallery </button></span>
+      <H1>Take a Look at Some of Our Projects Here!
+      </H1>
+
+  </div>
+
+  <div>
+      <h1 class="awardwinning">About FrontLine</h1>
+      <h1 class="sanew"> San Antonio/New Braunfels  </h1>
+      <h1 class="number1"> Number One Pool Servicing Company</h1>
+  </div>
+
+  <style>
+      .paragraph2font{
+          padding-top: 50px;
+          display: block;
+          padding-right: 350px;
+          font-size: 30px;
+          float: left;
+      }
+      .paragraph2picture{
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 50px;
+      }
+  </style>
+
+  <div>
+      <div class="container">
+            <p class="paragraph2font">
+                We pride ourselves on providing safe and efficient
+                equipment repairs and installations. That's why we
+                maintain State of Texas RAIL license and insurance
+                requirements. All of our Pool Service Technicians hold
+                current CPO certifications and strive to provide and maintain
+                safe and healthy pool and spa water for your family to enjoy
+                each and every visit.
+
+            </p>
+      </div>
+            <div>
+                <img class="paragraph2picture" src="/static/icon-residential.png">
+            </div>
+            <div>
+                <img class="paragraph2picture" src="/static/icon-commerical.png">
+
+            </div>
+  </div>
+
+  <style>
+       .homepage_bottom{
+
+          padding-top: 75px;
+          padding-bottom: 20px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          height: 750px;
+           width: auto;
+          background-color: lightslategray;
+          transition: 0.3s;
+           background-image: url("/static/homepage_bottom_pic.jpeg");
+  }
+  </style>
+  <div class="homepage_bottom">
+
   </div>
 
 
