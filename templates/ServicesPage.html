@@ -12,11 +12,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
       <title>FrontLine Pool</title>
     <style>
       body {
-  background-color: lightslategray;
+  background-color: #fff;
     }
 
       /********** Color strip at the top of the screen*********/
@@ -46,6 +47,91 @@
   {
     transform: rotate(359deg);
   }
+}
+
+
+h1{
+  width: 100%;
+ height: 100px;
+ position: center fixed;
+  text-align: center;
+  color:black;
+
+}
+
+.wrapper{
+  display: grid;
+  margin: 90px 100px auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+@media (max-width: 700px) {
+  .wrapper{
+    margin: 200px auto;
+  }
+}
+
+.wrapper .box{
+  width: 350px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1000px;
+  padding : 10px
+}
+.wrapper .box .front-face{
+  
+  background:  lightslategray;
+  height: 220px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+.box .front-face .icon{
+  text-align: center;
+display: inline-block;
+  height: 80px;
+}
+.box .front-face .icon i{
+  font-size: 65px;
+}
+.box .front-face span,
+.box .back-face span{
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .front-face .icon i,
+.box .front-face span{
+  text-align: center;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.box .back-face{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 220px;
+  width: 100%;
+  padding: 30px;
+  color:black;
+  opacity: 0;
+  background:lightslategray;
+  
+}
+.box .back-face p{
+  margin-top: 10px;
+  text-align: left;
+}
+.box:hover .back-face{
+  opacity: 1;
+}
+.box:hover .front-face{
+  opacity: 0;
 }
     </style>
 
@@ -151,14 +237,78 @@
 
     <!-- /.carousel -->
 
-<h1>Servies Text </h1>
+<!--SERVICE BOXES-->
+<div class="container-fluid" >
 
-<h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
+  <h1 class="text-center text-black" style="padding-top: 20px">WHAT WE DO</h1>
+  <h2 style="text-align: center;">Frontline Pool and Services takes care of everything so you can have fun in the sun. From cleaning to repairs to
+    to maintenace. Frontline has a skilled team to help you with anything you might think of. 
+  </h2>
+
+  <div class="wrapper">
+     <div class="box">
+        <div class="front-face">
+           <div class="icon">
+              <i class="fas fa-swimming-pool"></i>
+           </div>
+           <span>POOL CLEANING</span>
+        </div>
+        <div class="back-face">
+           <span>POOL CLEANING</span>
+           <p>
+              Schedule weekly vists to brush, vacuum, and skim the surface of your pool.
+              We will be in charge of emptying up baskets and making sure that equipment is working
+              properly.  
+           </p>
+        </div>
+     </div>
+     <div class="box">
+      <div class="front-face">
+         <div class="icon">
+            <i class="fas fa-calendar"></i>
+         </div>
+         <span>Pool Maintenace</span>
+      </div>
+      <div class="back-face">
+         <span>Education and Traning </span>
+         <p>
+            Need help learning a bit more about what you need to maintain your pool. 
+            We will offer a one hour on-site Pool School, so you are comfortable with your pool. 
+         </p>
+      </div>
+   </div>
+
+  <div class="box">
+   <div class="front-face">
+      <div class="icon">
+         <i class="fas fa-hot-tub"></i>
+      </div>
+      <span>EQUIPMENT & CHEMICAL SALES</span>
+   </div>
+   <div class="back-face">
+      <span>EQUIPMENT & CHEMICAL SALES</span>
+      <p>
+         Provide our customers with any supplies, parts, equpiment, or chemical needed. 
+      </p>
+   </div>
+</div>
+
+<div class="box">
+ <div class="front-face">
+    <div class="icon">
+       <i class="fas fa-tools"></i>
+    </div>
+    <span>POOL REPAIR</span>
+ </div>
+ <div class="back-face">
+    <span>POOL REPAIR</span>
+    <p>
+       Will help with any problem for example any problems regarding pumps, motors,
+       filters, cleaner, heaters, automation, and lights systems. 
+    </p>
+ </div>
+</div>
+</div>
 
   <div class="container">
       <img src="/static/pool.jpeg">
