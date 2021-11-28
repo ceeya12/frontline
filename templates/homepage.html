@@ -49,15 +49,17 @@
 }
 /* transperent bar behind navigation links in nav bar*/
 
-        .graytransperent{
-            width: auto;
-            height: 100px;
-            background-color: gray;
-        }
+        nav{
+            background-color: rgba(128, 128, 128,0.5);
+            height: auto;
+
+            }
 
     </style>
 
   </head>
+
+
   <div class="header">
       <h1 class="text-center text-white" style="font-size: 25px"> Schedule Your No Obligation Home Estimate, Call 830-355-5555 </h1>
   </div>
@@ -68,7 +70,7 @@
          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
 
-      <a style="padding-left: 300px" class="navbar-brand" href="#">HOME </a>
+      <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -78,25 +80,25 @@
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">ABOUT <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">SERVICES</a>
+            <a class="nav-link" href="{{ url_for('ServicesPage')}}">SERVICES</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">INQUIRY</a>
+            <a class="nav-link" href="{{ url_for('InquiryPage')}}">INQUIRY</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">GALLERY</a>
+            <a class="nav-link" href="{{ url_for('Gallery')}}">GALLERY</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">CONTACT</a>
+            <a class="nav-link" href="{{ url_for('ContactPage')}}">CONTACT</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">REVIEWS</a>
+            <a class="nav-link" href="{{ url_for('ReviewPage')}}">REVIEWS</a>
           </li>
             <li class="nav-item active">
-            <a class="nav-link" href="#">FINANCE</a>
+            <a class="nav-link" href="{{ url_for('FinancingPage')}}">FINANCE</a>
           </li>
         </ul>
           <div style="padding-right: 50px">
@@ -107,7 +109,8 @@
           </div>
           </div>
     </nav>
-      </div>
+
+
   <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -389,22 +392,21 @@
 
   <style>
       .paragraph2font{
-          padding-top: 50px;
+          padding-top: 80px;
           display: block;
-          padding-right: 350px;
           font-size: 30px;
-          float: left;
       }
       .paragraph2picture{
-          margin-left: auto;
-          margin-right: auto;
-          padding-top: 50px;
+          float: right;
+          padding: 50px;
       }
+
   </style>
 
   <div>
-      <div class="container">
-            <p class="paragraph2font">
+      <p class="paragraph2font">
+                <img class="paragraph2picture" src="/static/icon-residential.png">
+                <img class="paragraph2picture" src="/static/icon-commerical.png">
                 We pride ourselves on providing safe and efficient
                 equipment repairs and installations. That's why we
                 maintain State of Texas RAIL license and insurance
@@ -412,36 +414,36 @@
                 current CPO certifications and strive to provide and maintain
                 safe and healthy pool and spa water for your family to enjoy
                 each and every visit.
-
             </p>
-      </div>
-            <div>
-                <img class="paragraph2picture" src="/static/icon-residential.png">
-            </div>
-            <div>
-                <img class="paragraph2picture" src="/static/icon-commerical.png">
+       </div>
 
-            </div>
-  </div>
+
+
+
+
+
+
+
 
   <style>
        .homepage_bottom{
 
-          padding-top: 75px;
+          padding-top: 100px;
           padding-bottom: 20px;
           margin-top: 0px;
           margin-bottom: 0px;
           height: 750px;
            width: auto;
-          background-color: lightslategray;
           transition: 0.3s;
-           background-image: url("/static/homepage_bottom_pic.jpeg");
+          /* background-image: url("/static/homepage_bottom_pic.jpeg");*/
   }
   </style>
-  <div class="homepage_bottom">
+  <div>
+    <div class="homepage_bottom">
 
-  </div>
 
+    </div>
+</div>
 
 
 
