@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
 
       <!-- Required meta tags -->
@@ -28,6 +28,7 @@
           font-size: 18px;
           font-style: italic;
           padding-top: 20px;
+          font-weight: bold;
       }
 
 
@@ -61,7 +62,7 @@
 
 
   <div class="header">
-      <h1 class="text-center text-white" style="font-size: 25px"> Schedule Your No Obligation Home Estimate, Call 830-355-5555 </h1>
+      <h1 class="text-center text-white"> Schedule Your No Obligation Home Estimate, Call 830-355-5555 </h1>
   </div>
 
   <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 75px">
@@ -373,14 +374,24 @@
           margin-bottom: 0px;
           height: 125px;
            background-color: lightslategray;
+           text-align: center;
   }
+       .gradientbarbutton{
+           border-radius: 12px;
+           color: black;
+           background-color: red;
+           transform: rotate(15deg);
+           font-size: 35px;
+           padding-left: 10px;
+
+
+       }
 
   </style>
 
   <div class="gradientbar">
-      <span><button> Gallery </button></span>
-      <H1>Take a Look at Some of Our Projects Here!
-      </H1>
+
+      <H1>Take a Look at Some of Our Projects Here! <button class="gradientbarbutton" href="{{ url_for('Gallery')}}"> Gallery </button></H1>
 
   </div>
 
@@ -395,6 +406,7 @@
           padding-top: 80px;
           display: block;
           font-size: 30px;
+          padding-bottom: 100px;
       }
       .paragraph2picture{
           float: right;
@@ -423,27 +435,103 @@
 
 
 
-
+<!-- Big photo near the bottom of page -->
 
   <style>
        .homepage_bottom{
 
           padding-top: 100px;
           padding-bottom: 20px;
-          margin-top: 0px;
-          margin-bottom: 0px;
-          height: 750px;
-           width: auto;
-          transition: 0.3s;
-          /* background-image: url("/static/homepage_bottom_pic.jpeg");*/
+          height: 1000px;
+          background-image: url("/static/housewithapool.jpg .jpg");
   }
+       /* Summit Icon over background image */
+
+       .summiticon{
+
+           float: right;
+           height: 250px;
+           width: 300px;
+
+       }
   </style>
   <div>
     <div class="homepage_bottom">
-
-
+        <img class="summiticon" src="/static/summit_awards_2020a.png">
     </div>
 </div>
+
+  <div>
+      <h3 style="text-align: center"> Download Our FREE Consumer Price Guide </h3>
+  </div>
+
+  <style>
+      .servicesection{
+
+          background-image: url("/static/WHERE WE SERVICE-2.png");
+
+      }
+
+      .servicemap{
+
+           height: 600px;
+           width: 600px;
+            padding-top: 200px;
+
+
+      }
+      .serviceparagraph{
+          display: block;
+          text-align: right;
+
+      }
+
+  </style>
+
+  <div class="servicesection">
+      <p class="serviceparagraph">
+      <img class="servicemap"src="/static/area-Map-2.png">
+
+              Frontline Pool and Spa Services is synonymous with quality. We service our residential pools to the highest
+              quality standards in the pool industry.  Our Full complement of in-house resources ensures that your custom
+              pool is serviced on time, by our technicians and is backed by 100% satisfaction guarantee.</p>
+
+  </div>
+
+  </div>
+
+  <!--
+  <style>
+      .paragraphpicture{
+          float: left;
+          height: 200px;
+          width: 250px;
+      }
+      .paragraphfont{
+          padding-top: 60px;
+          display: block;
+          text-align: center;
+      }
+  </style>
+  <div id="container">
+      <img class="paragraphpicture" src="/static/2019-top-50-service-logo-hero.png">
+      <p class="paragraphfont">
+          We go above and beyond in order to show our clients why we’re the best option for their needs. Some of
+          which include using the best chemical products on the market, insurance, current state licensing and
+          regulations, ensuring all our Service Technicians have been background checked, are highly trained and (CPO)
+          Certified Pool and Spa Operators. We are also partnered with leading industry equipment manufacturers to
+          receive constant updates on new and improved methods and state of the art energy efficient equipment. Read
+          below to learn more, and contact us with questions.
+
+      </p>
+  </div>
+
+  <style>
+
+
+  -->
+
+
 
 
 
