@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
 
       <!-- Required meta tags -->
@@ -15,9 +15,6 @@
 
       <title>FrontLine Pool</title>
     <style>
-      body {
-  background-color: lightslategray;
-    }
 
       /********** Color strip at the top of the screen*********/
 
@@ -26,8 +23,12 @@
           width: 100%;
           height: 100px;
           background-color: red;
-          position: fixed;
-
+          position: absolute;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-size: 18px;
+          font-style: italic;
+          padding-top: 20px;
+          font-weight: bold;
       }
 
 
@@ -47,27 +48,37 @@
     transform: rotate(359deg);
   }
 }
+/* transperent bar behind navigation links in nav bar*/
 
-navbar{
-  background-color: rgba(128, 128, 128,0.5);
-}
+        nav{
+            background-color: rgba(128, 128, 128,0.5);
+            height: auto;
+
+            }
 
     </style>
 
   </head>
+
+
   <div class="header">
-      <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
+      <h1 class="text-center text-white"> Schedule Your No Obligation Home Estimate, Call 830-355-5555 </h1>
   </div>
 
   <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 75px">
-     <div>
-          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
+
+      <div>
+         <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
+
       <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
@@ -97,8 +108,9 @@ navbar{
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
           </div>
-      </div>
+          </div>
     </nav>
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -123,6 +135,19 @@ navbar{
     C A R O U S E L
     ####################################################
     -->
+  <style>
+  .carousel-content {
+  position: absolute;
+  bottom: 50%;
+  left: 42%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+      font-size: 60px;
+      font-family: "Lucida Console", "Courier New", monospace;
+      font-weight: bold;
+}</style>
+
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding-top: 100px">
   <ol class="carousel-indicators">
@@ -132,16 +157,28 @@ navbar{
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="/static/carousel_img1.jpg" alt="First slide">
+      <img class="d-block w-100" style="filter: brightness(75%);" src="/static/carousel_img1.jpg" alt="First slide">
+        <div class="carousel-content">
+            <p>About Us</p>
+        </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/static/carousel_img2.png" alt="Second slide">
+      <img class="d-block w-100" style="filter: brightness(75%);" src="/static/carousel_img2.png" alt="Second slide">
+        <div class="carousel-content">
+            <p>About Us</p>
+        </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/static/carousel_img3.jpeg" alt="Third slide">
+      <img class="d-block w-100" style="filter: brightness(75%);"  src="/static/carousel_img3.jpeg" alt="Third slide">
+         <div class="carousel-content">
+            <p>About Us</p>
+        </div>
     </div>
       <div class="carousel-item">
-      <img class="d-block w-100" src="/static/carousel_img4.jpg" alt="Third slide">
+      <img class="d-block w-100" style="filter: brightness(75%);"  src="/static/carousel_img4.jpg" alt="Third slide">
+           <div class="carousel-content">
+            <p>About Us</p>
+        </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -156,20 +193,70 @@ navbar{
 
     <!-- /.carousel -->
 
-<h1>About Text </h1>
+  <!--strip under carousel -->
+  <style>
 
-<h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
-  <h1>Test Text </h1>
+      .colorstrip{
+          height: 120px;
+          background-color: lightslategray;
 
-  <div class="container">
-      <img src="/static/pool.jpeg">
+      }
+      .colorstripfont{
+          color: white;
+          font-size: 40px;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-weight: bold;
+          text-align-all: center;
+          padding-top: 30px;
+          padding-left: 35px;
+
+      }
+
+  </style>
+
+  <div class="colorstrip">
+      <div>
+          <h2 class="colorstripfont"> Quality Service, Fine Customer Service, Total Customer Satisfaction </h2>
+      </div>
   </div>
 
+  <!--background body image -->
+  <style>
+  .bgroundimage {
 
+      background-image: url("/static/about_background.jpeg");
+      height: 1800px;
+  }
+  .right{
+      height: 1800px;
+      width: 900px;
+      color: darkgray;
+      border: 1px solid gray;
+      background-color: darkgray;
+      opacity: 0.7;
+
+  }
+  .teampic{
+
+      padding: 50px;
+  }
+
+
+
+</style>
+
+  <div class="bgroundimage">
+
+      <div class="right">
+
+          <div class="teampic">
+              <img src="/static/patandmaren.jpg">
+
+          </div>
+
+      </div>
+
+  </div>
 
 
 
