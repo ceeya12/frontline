@@ -16,7 +16,7 @@
       <title>FrontLine Pool</title>
     <style>
       body {
-  background-color: lightslategray;
+  background-color: whitesmoke;
     }
 
       /********** Color strip at the top of the screen*********/
@@ -194,17 +194,30 @@
   background-color: RoyalBlue;
     opacity: 0.7;
 }
+div.a{
+  text-align:center;
+}
+div.b{
+    text-align:center;
+}
+div.e{
+    text-align:center;
+}
 </style>
+  <div class="a">
   <h1>Follow us on our Social Media! </h1>
   <a href="#" class="fa fa-twitter"></a>
   <a href="#" class="fa fa-youtube"></a>
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-instagram"></a>
-  <a href="#" class="fa fa-pinterest"></a>
+  <a href="https://www.facebook.com/Frontlinenb" class="fa fa-facebook"></a>
+  <a href="https://instagram.com/frontlinenb?utm_medium=copy_link" class="fa fa-instagram"></a>
+  <a href="https://www.pinterest.com/c7354448f312ec9327020f2bb3c3d2/_saved/" class="fa fa-pinterest"></a>
   <a href="#" class="fa fa-reddit"></a>
-<h1>Send in a Questionaire Form! </h1>
+
+<h1 class="QuestionaireForm">Send in a Questionaire Form! </h1>
+       </div>
 <section>
-   <form>
+    <div class="b">
+   <form action="mailto:FrontlineServices@gmail.com" method="post" enctype="text/plain" class="FormQuestions">
        <label for="firstname">First Name:</label>
        <input type="text" id="firstname" name="firstname"><br>
 
@@ -212,7 +225,7 @@
        <input type="text" id="lastname" name="lastname"><br>
 
        <label for="useremail">Email Address:</label>
-       <input type="text" id="useremail" name="useremail"><br>
+       <input type="email" id="email" name="email"><br>
 
        <label for="userReason">Reason for Contact:</label>
        <select name="UserReason" id="UserReason">
@@ -231,6 +244,50 @@
 
 
    </form>
+        </div>
+
+
+     <style>
+
+      .colorstrip{
+          height: 120px;
+          background-color: slategray;
+
+      }
+      .colorstripfont{
+          color: white;
+          font-size: 40px;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-weight: bold;
+          text-align-all: center;
+          padding-top: 30px;
+          padding-left: 35px;
+
+      }
+
+  </style>
+
+  <div class="colorstrip">
+      <div class="e">
+          <h2 class="colorstripfont" href="tel:+8303600971"> Give us a call at 830-360-0971! </h2>
+          <p><a href="tel:+8303600971">830-360-0971</a></p>
+      </div>
+  </div>
+
+    <style>
+        .FrontLineMap{
+            border-radius:8px;
+            width:99%;
+            height:99%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+<div class="container">
+      <img src="/static/FrontLine%20Location%20Map.png" alt="FrontLine Map" class="FrontLineMap" href="https://www.google.com/maps/place/Frontline+Pool+and+Spa+Services,+LLC/@29.7127848,-98.1609094,1086m/data=!3m1!1e3!4m5!3m4!1s0x0:0x165346307a3802d5!8m2!3d29.7131574!4d-98.160658?hl=en">
+  </div>
+
 </section>
 
   <aside>
@@ -240,15 +297,14 @@
   </aside>
 
   <footer>
+
     <p>Frontline pool and spa services<br>
     <a href="FrontlineServices@gmail.com">FrontlineServices@gmail.com</a></p>
 
   </footer>
 
 
-  <div class="container">
-      <img src="/static/pool.jpeg">
-  </div>
+
 
 
 
