@@ -13,10 +13,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-      <title>FrontLine Pool</title>
+      <customers>FrontLine Pool</customers>
     <style>
       body {
-  background-color: lightslategray;
+  background-color: white;
     }
 
       /********** Color strip at the top of the screen*********/
@@ -152,16 +152,347 @@
     <!-- /.carousel -->
 
 <section>
+ <style>
 
+      .colorstrip{
+          height: 120px;
+          background-color: white;
+
+      }
+      .colorstripfont{
+          color: black;
+          font-size: 40px;
+          font-family: "Times New Roman", Times, serif;
+          font-weight: bold;
+          text-align: center;
+          padding-top: 30px;
+          padding-left: 35px;
+
+      }
+
+  </style>
+
+  <div class="colorstrip">
+      <div>
+          <h2 class="colorstripfont"> Reviews! </h2>
+      </div>
+  </div>
 </section>
 
-  <div class="container">
-      <img src="/static/pool.jpeg">
-  </div>
 
+  <div class="container mt-3">
+        <!--create dropdown class-->
+        <div class="dropdown">
+            <!--create dropdown button that sorts -->
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+              Sort By
+            </button>
+            <!--create dropdown menue for sort -->
+            <ul class="dropdown-menu">
+                <!--Sort button for latest customer -->
+              <li><a class="dropdown-item" href="javascript:latest()">Latest Reviews</a></li>
+                <!--Sort button for oldest customer -->
+              <li><a class="dropdown-item" href="javascript:oldest()">Oldest Reviews</a></li>
+                <!--Sort button by Movie name -->
+              <li><a class="dropdown-item" href="javascript:customername()">Customer Name</a></li>
+                <!--Sort button by Service name -->
+              <li><a class="dropdown-item" href="javascript:Servicename()">Services</a></li>
+            </ul>
+            <!--Search label -->
+            <label style="background-color:#0d6efa">Keyword Search</label>
+            <!--input box for keyword search -->
+            <input type="text" id="searchinput">
+            <!--keyword search button -->
+        <button type="button" onclick="searchkeyword()">Submit</button>
+        </div>
+        <br>
+        <!--movie div -->
+        <div id="customer"></div>
+        <!--Previous page for customer -->
+        <button type="button" style="color:black" style="background-color:white" id="prev" class="btn btn-success" onclick="previouspage()"><</button>
+        <!--next page display next x amount of customer per page -->
+        <button type="button" style="color:black" id="next" class="btn btn-success" onclick="nextpage()" style="background-color:white"  >></button>
+        <!--label for customer per page input -->
+        <label style="background-color:white">Ratings Per Page: </label>
+        <!--input textbox customer per page -->
+            <input type="text" id="customerperpage">
+        <!--button for submit customer per page input-->
+        <button type="button" onclick="numbercustomerperpage()">Submit</button>
+    </div>
 
+<script>
+        <!--Gets and returns user input for customer per page-->
+        function getnumber()
+        {
+            <!--Get documnent-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Set num to customerperpage number -->
+            var num = document.getElementById("customerperpage").value;
+            return num;
+        }
+        <!--Change the number of customer per page based on user input-->
+        function  numbercustomerperpage()
+        {
+            <!--get document-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Get input number-->
+            var num = getnumber();
+            <!--Set lat to customer array d-->
+            var lat = d;
+            <!--set per page to user input-->
+            per_page = num;
+            <!--Change the movie display-->
+            appendData(lat,0);
+        }
+        <!--Return searchinput-->
+        function getkey()
+        {
+            <!--get input in searchinput id-->
+            var key = document.getElementById("searchinput").value;
+            <!--return key variable-->
+            return key;
+        }
+        <!--Variable d is array of customer-->
+        var d;
+        <!--Get customer.json file and call appendData function to display initial customer-->
+        fetch('/static/ServicesReview.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data, 0);
+                d = data;
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        <!--Set starting customer per page variable-->
+        var per_page = 5;
+        <!--Set variable j to 0-->
+        var j = 0;
 
+        <!--Sort customer array by new to oldest and call appendData function-->
+        function latest()
+        {
+            <!--get document-->
+            document.getElementById("customer").innerHTML = "";
+            <!--sort customer array by new to oldest-->
+            var lat = d.sort(function(obj1, obj2) {
+            // Descending: newest to oldest
+                return obj2.date - obj1.date;
+            });
+            <!--Set customer array to new sorted array-->
+            d = lat;
+            <!--Call appendDat function with new sorted array-->
+            appendData(lat, 0);
+        }
 
+        <!--Sort customer by oldest to newest-->
+        function oldest()
+        {
+            <!--Get document-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Sort array function ol-->
+            var lat = d.sort(function(obj1, obj2) {
+            // Descending: newest to oldest
+                return obj1.date - obj2.date;
+            });
+            <!--Set d = lat-->
+            d = lat;
+            <!--Call appendDat with new sorted moviearray-->
+            appendData(lat, 0);
+        }
+
+        <!--Display customer with user input keyword-->
+        function searchkeyword()
+        {
+            <!--Get document-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Get user input-->
+             var key = getkey();
+            <!--set to lower case-->
+             key = key.toLowerCase();
+            <!--set lat to customer array-->
+             var lat = d;
+            <!--set counter varaible equal to 0-->
+             let counter = 0;
+            <!--make temp array-->
+             const temp = [];
+            <!--Go through each customer in array-->
+             for(let i = 0; i < d.length;i++)
+             {
+                 <!--Check to see if user input is movie customers-->
+                 if(lat[i].customers.toLowerCase() === key)
+                 {
+                    temp[counter] = lat[i];
+                    counter++;
+                 }
+                 <!--Set keyowrd as an input-->
+                 tempnumb = parseInt(key);
+                 <!--Check if user input is movie date-->
+                 if(lat[i].date === tempnumb)
+                 {
+                    temp[counter] = lat[i];
+                    counter++;
+                 }
+                 <!--Check user input against rating-->
+                 if(lat[i].rating[0] != null)
+                 {
+                     <!--Go through each rating member of movie-->
+                     for(let j = 0; j < lat[i].rating.length; j++)
+                     {
+                         <!--Check cass to keyword-->
+                         if(lat[i].rating[j]  === key)
+                         {
+                            temp[counter] = lat[i];
+                            counter++;
+                         }
+                     }
+                 }
+                 <!--Compare input keyword to movie genre-->
+                 if(lat[i].services[0] != null)
+                 {
+                     <!--Compare keyowrd to genre-->
+                     for(let z = 0; z < lat[i].services.length; z++)
+                     {
+                         let tempgenre = lat[i].services[z].toLowerCase();
+                         <!--Check if input equal genre-->
+                         if(tempgenre  === key)
+                         {
+                            temp[counter] = lat[i];
+                            counter++;
+                         }
+                     }
+                 }
+             }
+             <!--Call appendData with new movie array-->
+            appendData(temp, 0);
+        }
+
+        <!--Sort by movie name and call appendData function-->
+        function customername()
+        {
+            <!--Get document-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Sort movie array by alphabetical-->
+            var lat = d.sort(function(obj1, obj2) {
+            // Descending: newest to oldest
+                if(obj1.customername.toLowerCase() < obj2.customername.toLowerCase())
+                    return -1;
+                if(obj1.customername.toLowerCase() > obj2.customername.toLowerCase())
+                    return 1;
+                return 0;
+            });
+            <!--Set new customer array to sorted array-->
+            d = lat;
+            <!--Call appendDat with new sorted customer array-->
+            appendData(lat, 0);
+        }
+
+        function Servicename()
+        {
+            <!--Get document-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Sort movie array by alphabetical-->
+            var lat = d.sort(function(obj1, obj2) {
+            // Descending: newest to oldest
+                if(obj1.services.toLowerCase() < obj2.services.toLowerCase())
+                    return -1;
+                if(obj1.services.toLowerCase() > obj2.services.toLowerCase())
+                    return 1;
+                return 0;
+            });
+            <!--Set new customer array to sorted array-->
+            d = lat;
+            <!--Call appendDat with new sorted customer array-->
+            appendData(lat, 0);
+        }
+
+        <!--Change Page limit and call appendData function-->
+        function changepagelimit(e)
+        {
+            <!--Call document function-->
+            document.getElementById("customer").innerHTML = "";
+            <!--Set variable lat to customer array-->
+            var lat = d;
+            <!--Set page limit to new number-->
+            per_page = e;
+            <!--Call appendData function-->
+            appendData(lat,0);
+        }
+
+        <!--Go to next page with next x amount of customer displayed in array-->
+        function nextpage()
+        {
+            <!--get document-->
+            document.getElementById("customer").innerHTML="";
+            <!--Set starting movie to next-->
+            j = j + 1;
+            <!--Change appendData display-->
+            var a = j * per_page;
+            <!--Call appendData-->
+            appendData(d, a);
+        }
+
+        <!--Go to previous page and display previous x amount of customer from array-->
+        function previouspage()
+        {
+            <!--Get document-->
+            document.getElementById("customer").innerHTML="";
+            <!--Check if j is greater than 0-->
+            if(j > 0)
+            {
+                j = j - 1;
+            }
+            <!--Set new starting point-->
+            var a = j * per_page;
+            <!--Call appendData function with new starting point-->
+            appendData(d, a);
+        }
+
+        <!--Display and create html elements for x amount of customer to display on website-->
+        function appendData(data, b) {
+            console.log(data);
+            <!--Get document-->
+            var mainContainer = document.getElementById("customer");
+            <!--Display and create movie html elements-->
+            for (var i = b; i < b + per_page; i++) {
+                <!--Create div1 element-->
+                var div1 = document.createElement("div");
+                <!--Set div1 classname, background color and text color-->
+                div1.className = "card bg-white text-black";
+                <!--Create div2 element-->
+                var div2 = document.createElement("div");
+                <!--Set div2 classname-->
+                div2.className = "card-body";
+                <!--Create h4 element-->
+                var h4 = document.createElement("h4");
+                <!--Set h4 class name-->
+                h4.className = "card-customers";
+                <!--Create p element-->
+                var p = document.createElement("p");
+                <!--Set p class name-->
+                p.className = "card-text";
+                <!--Create br element-->
+                var br = document.createElement("br");
+                <!--Set h4 html to movie customers-->
+                h4.innerHTML = data[i].customername;
+                <!--Set p html to movie details-->
+                p.innerHTML = 'date: ' + data[i].date + '; rating: ' + data[i].rating + '; services: ' + data[i].services;
+                <!--append div1 element to mainContainer-->
+                mainContainer.appendChild(div1);
+                <!--Append div2 to div1-->
+                div1.appendChild(div2);
+                <!--Append h4 to div2-->
+                div2.appendChild(h4);
+                <!--Append p to div2-->
+                div2.appendChild(p);
+                <!--Append br to mainContainer-->
+                mainContainer.appendChild(br);
+            }
+        }
+        <!--End of javascript-->
+    </script>
 
 </body>
 </html>
