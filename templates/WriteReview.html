@@ -205,11 +205,34 @@
             <!--keyword search button -->
         <button type="button" onclick="searchkeyword()">Submit</button>
             <label >Did you have a service done?</label>
-            <button style="position:absolute">Write a Review</button>
+            <button style="position:absolute" onclick="toggleformdisplay()">Write a Review</button>
+            <div class="userreviewform" id="userinputform" style="display:none">
+                <form style="background-color: whitesmoke">
+                    <label style="font-size:40px">User Review</label><br>
+                    <label for="name">First and Last name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <br><label for="">Rating</label>
+                    <select id="userRating" name="rated">
+                        <option value="1 Star">1 Star</option>
+                        <option value="2 Star">2 Star</option>
+                        <option value="3 Star">3 Star</option>
+                        <option value="4 Star">4 Star</option>
+                        <option value="5 Star">5 Star</option>
+                    </select>
+                    <br><br><label for="">Service Type</label>
+                    <select id="userService" name="userServiceChoice">
+                        <option value="Pool Cleaning">Pool Cleaning</option>
+                        <option value="pool Maintenance">pool Maintenance</option>
+                        <option value="Equipment & Chemical Sales">Equipment & Chemical Sales</option>
+                        <option value="Pool Repair">Pool Repair</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
         <br>
         <!--movie div -->
-        <div id="customer12">customers</div>
+        <div id="customer12"></div>
         <!--Previous page for customer -->
         <button type="button" style="color:black" style="background-color:white" id="prev" class="btn btn-success" onclick="previouspage()"><</button>
         <!--next page display next x amount of customer per page -->
@@ -236,6 +259,26 @@
     </div>
 
 <script>
+        function AddReview()
+        {
+
+        }
+
+        function toggleformdisplay()
+        {
+            var x = document.getElementById("userinputform");
+            console.log("here");
+            if (x.style.display === "none")
+            {
+                x.style.display = "block";
+            }
+            else
+            {
+                x.style.display = "none";
+            }
+        }
+
+
         <!--Gets and returns user input for customer per page-->
         function getnumber()
         {
