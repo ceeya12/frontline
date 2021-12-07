@@ -15,161 +15,164 @@
 
       <title>FrontLine Pool</title>
     <style>
-      body {
-  background-color: lightslategray;
-    }
+        body {
+            background-color: lightslategray;
+        }
 
       /********** Color strip at the top of the screen*********/
-
-      .header{
-
+        .header{
           width: 100%;
           height: 100px;
           background-color: red;
           position: fixed;
-
       }
-
-       nav{
+        nav{
             background-color: rgba(128, 128, 128,0.5);
             height: auto;
 
             }
 
-.wrapper{
-  display: grid;
-  margin: 90px 100px auto;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-@media (max-width: 700px) {
-  .wrapper{
-    margin: 200px auto;
-  }
-}
+        .wrapper{
+          display: grid;
+          margin: 90px 100px auto;
+          grid-gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        @media (max-width: 700px) {
+          .wrapper{
+            margin: 200px auto;
+          }
+        }
 
-.wrapper .box{
-  width: 350px;
-  margin: 0 auto;
-  position: relative;
-  perspective: 1000px;
-  padding : 10px
-}
-.wrapper .box .front-face{
-  height: 220px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
-  transition: all 0.5s ease;
-    outline: black;
-}
-.box .front-face .icon{
-  text-align: center;
-display: inline-block;
-  height: 80px;
-}
-.box .front-face .icon i{
-  font-size: 65px;
-}
-.box .front-face span,
-.box .back-face span{
-  font-size: 22px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.box .front-face .icon i,
-.box .front-face span{
-  text-align: center;
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.box .back-face{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 220px;
-  width: 100%;
-  padding: 30px;
-  color:black;
-  opacity: 0;
-}
-.box .back-face p{
-  margin-top: 10px;
-  text-align: left;
-}
-.box:hover .back-face{
-  opacity: 1;
-}
-.box:hover .front-face{
-  opacity: 0;
-}
+        .wrapper .box{
+          width: 350px;
+          margin: 0 auto;
+          position: relative;
+          perspective: 1000px;
+          padding : 10px
+        }
+        .wrapper .box .front-face{
+          height: 220px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+          transition: all 0.5s ease;
+            outline: black;
+        }
 
-  .colorbar{
+        .box .front-face{
+          text-align: center;
+        display: inline-block;
+          height: 80px;
+        }
 
-          padding-top: 40px;
-          padding-bottom: 20px;
-          margin-top: 0px;
-          margin-bottom: 0px;
-          height: 250px;
-          background-color: gray;
-          transition: 0.3s
-  }
+        .box .front-face{
+          font-size: 65px;
+        }
 
-    .innertext{
-      text-align: center;
-      font-size: 18px;
-        color: white;
-  }
+        .box .front-face span,
+        .box .back-face span{
+          font-size: 22px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        .box .front-face span{
+          text-align: center;
+          background: black;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .box .back-face{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          height: 220px;
+          width: 100%;
+          padding: 30px;
+          color:black;
+          opacity: 0;
+        }
+
+        .box .back-face p{
+          margin-top: 10px;
+          text-align: left;
+        }
+
+        .box:hover .back-face{
+          opacity: 1;
+        }
+
+        .box:hover .front-face{
+          opacity: 0;
+        }
+
+        .colorbar{
+            padding-top: 40px;
+            padding-bottom: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 250px;
+            background-color: gray;
+            transition: 0.3s
+        }
+
+        .innertext{
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
     </style>
+    </head>
 
-  </head>
-  <div class="header">
-      <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
-  </div>
+    <div class="header">
+        <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
+    </div>
 
-  <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 105px; padding-bottom: 50px">
-     <div>
-          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
-      </div>
-      <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('ServicesPage')}}">SERVICES</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('InquiryPage')}}">INQUIRY</a>
-          </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('Gallery')}}">GALLERY</a>
-          </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('ContactPage')}}">CONTACT</a>
-          </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('ReviewPage')}}">REVIEWS</a>
-          </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('FinancingPage')}}">FINANCE</a>
-          </li>
-        </ul>
-          <div style="padding-right: 50px">
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
-          </div>
-      </div>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 105px; padding-bottom: 50px">
+        <div>
+              <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
+        </div>
+        <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('ServicesPage')}}">SERVICES</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('InquiryPage')}}">INQUIRY</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('Gallery')}}">GALLERY</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('ContactPage')}}">CONTACT</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('ReviewPage')}}">REVIEWS</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('FinancingPage')}}">FINANCE</a>
+                </li>
+            </ul>
+
+            <div style="padding-right: 50px">
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
     </nav>
 
   <!-- Optional JavaScript; choose one of the two! -->
@@ -235,7 +238,8 @@ display: inline-block;
         </div>
 
         <h2 style="padding-left: 170px; padding-top: 100px">PRICING GUIDE: How Much Do Our Pool Services Cost?</h2>
-           <h6 style="padding-left: 170px">These are starting prices. Please contact for an estimate.</h6>
+        <h6 style="padding-left: 170px">These are starting prices. Please contact for an estimate.</h6>
+
         <!--SERVICE BOXES-->
         <div class="container-fluid" style="padding-bottom: 100px">
           <div class="wrapper">
@@ -267,9 +271,9 @@ display: inline-block;
 
                  </p>
               </div>
-           </div>
+             </div>
 
-          <div class="box" style="background-color: whitesmoke">
+              <div class="box" style="background-color: whitesmoke">
            <div class="front-face">
               <span style="background-color: #777777">SILVER PACKAGE</span>
                <span>$200 per month</span>
@@ -298,8 +302,8 @@ display: inline-block;
             </p>
          </div>
         </div>
-        </div>
-        </div>
-          <h6 style="padding-left: 170px; padding-bottom: 120px">What services do we offer? <a HREF="{{ url_for('ServicesPage')}}" style="color: red">Click here!</a></h6>
+      </div>
+    </div>
+    <h6 style="padding-left: 170px; padding-bottom: 120px">What services do we offer? <a HREF="{{ url_for('ServicesPage')}}" style="color: red">Click here!</a></h6>
 </body>
 </html>
