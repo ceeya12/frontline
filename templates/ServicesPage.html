@@ -24,10 +24,16 @@
 
       .header{
 
-          width: 100%;
+      width: 100%;
           height: 100px;
           background-color: red;
-          position: fixed;
+          position: absolute;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-size: 18px;
+          font-style: italic;
+          padding-top: 20px;
+          font-weight: bold;
+
 
       }
 
@@ -48,6 +54,14 @@
     transform: rotate(359deg);
   }
 }
+
+/* transperent bar behind navigation links in nav bar*/
+
+        nav{
+            background-color: rgba(128, 128, 128,0.5);
+            height: auto;
+
+            }
 
 
 h1{
@@ -137,18 +151,23 @@ display: inline-block;
 
   </head>
   <div class="header">
-      <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
+      <h1 class="text-center text-white"> Schedule Your No Obligation Home Estimate, Call 830-360-0971 </h1>
   </div>
 
   <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 75px">
-     <div>
-          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
+
+      <div>
+         <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
+
       <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
@@ -178,7 +197,7 @@ display: inline-block;
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
           </div>
-      </div>
+          </div>
     </nav>
 
   <!-- Optional JavaScript; choose one of the two! -->

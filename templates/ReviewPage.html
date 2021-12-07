@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
 
       <!-- Required meta tags -->
@@ -15,9 +15,6 @@
 
       <title>FrontLine Pool</title>
     <style>
-      body {
-  background-color: white;
-    }
 
       /********** Color strip at the top of the screen*********/
 
@@ -26,8 +23,12 @@
           width: 100%;
           height: 100px;
           background-color: red;
-          position: fixed;
-
+          position: absolute;
+          font-family: "Lucida Console", "Courier New", monospace;
+          font-size: 18px;
+          font-style: italic;
+          padding-top: 20px;
+          font-weight: bold;
       }
 
 
@@ -47,22 +48,37 @@
     transform: rotate(359deg);
   }
 }
+/* transperent bar behind navigation links in nav bar*/
+
+        nav{
+            background-color: rgba(128, 128, 128,0.5);
+            height: auto;
+
+            }
+
     </style>
 
   </head>
+
+
   <div class="header">
-      <h1 class="text-center text-white" style="padding-top: 20px" > Call Today For Your Free Estimate </h1>
+      <h1 class="text-center text-white"> Schedule Your No Obligation Home Estimate, Call 830-360-0971 </h1>
   </div>
 
   <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="padding-top: 75px">
-     <div>
-          <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
+
+      <div>
+         <img src="/static/frontlinedogtag.png" class="frontlinedogtag" width="200" height="100">
       </div>
+
       <a style="padding-left: 300px" class="navbar-brand" href="{{ url_for('homepage')}}">HOME </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('AboutUsPage')}}">ABOUT <span class="sr-only">(current)</span></a>
@@ -92,8 +108,9 @@
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
           </div>
-      </div>
+          </div>
     </nav>
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -105,6 +122,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
 
 
 
