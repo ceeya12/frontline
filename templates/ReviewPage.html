@@ -221,34 +221,34 @@
             <!--input box for keyword search -->
             <input type="text" id="searchinput">
             <!--keyword search button -->
-        <button type="button" onclick="searchkeyword()">Submit</button>
+        <button type="button" onclick="searchkeyword()">Submit</button><br><br>
             <label >Did you have a service done?</label>
             <button style="position:absolute">Write a Review</button>
         </div>
         <br>
         <!--movie div -->
-        <div id="customer12">customers</div>
+        <div id="customer12"></div>
         <!--Previous page for customer -->
-        <button type="button" style="color:black" style="background-color:white" id="prev" class="btn btn-success" onclick="previouspage()"><</button>
+        <button type="button" style="color:black" style="background-color:white" id="prev" class="btn btn-success" onclick="previouspage()" ><</button>
         <!--next page display next x amount of customer per page -->
         <button type="button" style="color:black" id="next" class="btn btn-success" onclick="nextpage()" style="background-color:white"  >></button>
         <!--label for customer per page input -->
         <!--create dropdown class-->
         <div class="dropdownnumberperpage">
             <!--create dropdown button that sorts -->
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="position: absolute">
               view
             </button>
             <!--create dropdown menue for sort -->
             <ul class="dropdown-menu">
                 <!--Sort button for latest customer -->
-              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(5)">5</a></li>
+              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(5)">5 Reviews per page</a></li>
                 <!--Sort button for oldest customer -->
-              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(10)">10</a></li>
+              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(10)">10 Reviews per page</a></li>
                 <!--Sort button by Movie name -->
-              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(20)">20</a></li>
+              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(20)">20 Reviews per page</a></li>
                 <!--Sort button by Service name -->
-              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(50)">50</a></li>
+              <li><a class="dropdown-item" href="javascript:numbercustomerperpage(50)">50 Reviews per page</a></li>
             </ul>
         </div>
     </div>
