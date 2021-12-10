@@ -38,5 +38,10 @@ def ServicesPage(): # put application's code here
 def FinancingPage(): # put application's code here
     return flask.render_template("Financing.html")
 
+@app.route('/WriteReview')
+def WriteReview(): # put application's code here
+    return flask.render_template("WriteReview.html")
+
 if __name__ == '__main__':
     app.run()
+6
