@@ -22,10 +22,6 @@ def ContactPage(): # put application's code here
 def Gallery(): # put application's code here
     return flask.render_template("Gallery.html")
 
-@app.route('/InquiryPage')
-def InquiryPage(): # put application's code here
-    return flask.render_template("InquiryPage.html")
-
 @app.route('/ReviewPage')
 def ReviewPage(): # put application's code here
     return flask.render_template("ReviewPage.html")
