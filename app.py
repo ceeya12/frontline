@@ -42,6 +42,14 @@ def FinancingPage(): # put application's code here
 def WriteReview(): # put application's code here
     return flask.render_template("WriteReview.html")
 
+@app.route('/Payment')
+def Payment(): # put application's code here
+    return flask.render_template("Payment.html")
+
+@app.route('/Paid')
+def Paid(): # put application's code here
+    return flask.render_template("Paid.html")
+
 if __name__ == '__main__':
     app.run()
 6
