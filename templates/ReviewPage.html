@@ -283,6 +283,9 @@
   <!--Gets and returns user input for customer per page-->
 
 <script>
+        <!--Variable d is array of customer-->
+        var d;
+
 
         function AddReview()
         {
@@ -290,9 +293,13 @@
             var date = new Date().getFullYear();
             var rating = document.getElementById("userRating");
             var service = document.getElementById("userService");
-
+            console.log(d);
             var temp = {"customersname" : name , "date" : date, "services:" : rating, "rating:" : service};
-            d.push(temp);
+
+            var temp1 = JSON.parse(d);
+            temp1.push(temp);
+            d = JSON.stringify(temp1);
+            console.log(d);
             appendData(d,0);
         }
 
@@ -342,8 +349,7 @@
             <!--return key variable-->
             return key;
         }
-        <!--Variable d is array of customer-->
-        var d;
+
         <!--Get customer.json file and call appendData function to display initial customer-->
         fetch('/static/PoolServices.json')
             .then(function (response) {
